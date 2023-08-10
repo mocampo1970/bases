@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bases';
+  // Asi viene por defecto 
+  //title = 'bases';
+  // lo vamos a cambiar por este ya que el profe le gusta definirlo asi
+  public title: string = "Titulo App bases " 
 }
