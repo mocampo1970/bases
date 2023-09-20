@@ -1,9 +1,29 @@
 <p>hero works! insertado en app-component</p>
 
-<td>capitalizado:</td>
+<td>Nombre:</td>
+<dd>{{name}}</dd>
+
+<td>Edad:</td>
+<dd>{{age}}</dd>
+
+<td>CapitalizeName:</td>
 <dd>{{capitalizeName}}</dd>
 
 <!-- Invoco metodo getHeroDescription los metodos se invocan con () -->
 <td>Metodo invacando un metodo getHeroDescription():</td>
 <dd>826 * 2</dd>
 <dd>{{ getHeroDescription() }}</dd>
+
+<!-- Si el name es <> a la expresion que aparece ahi lo oculta por medio del ngIf-->
+<button  
+    *ngIf="name !== 'Mauricio Ocampo Inteligente'"   
+    class="btn btn-primary mx-2" 
+    (click)="changeNameHero()"> 
+    Cambiar nombre
+</button>
+
+<button 
+    class="btn btn-primary mx-2" 
+    (click)="changeAgeHero()"> 
+    Cambiar edad
+</button>

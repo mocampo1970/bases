@@ -1,1 +1,40 @@
 <p>list works!</p>
+
+<h3>Lista de mis heroes</h3>
+
+
+<!-- Asi funciona bien y aqui solo se habilita el borrado cuando deletedhero es true
+     pero vamos a hacerlo con NGTEMPLATE -->
+<!--<div *ngIf="deletedHero">
+    <h3>Heroe eliminado <small class="text-danger">{{ deletedHero }}</small></h3>
+</div>
+-->
+
+<!-- Si no hay un heroe borrado no tiene sentido mostrar el h3 este y el anterior funcionan bien
+    pero lo vamos a trabajar con NGTEMPLATE-->
+<!-- <h3 *ngIf="!deletedHero">No ha borrado nada</h3>-->
+
+<!-- NG-TEMPLATE-->
+<!-- Eso significa que si si hace este div, SINO o sea el else hace el ngtemplate obviamente debe 
+    tener el mismo nombre que va en el else con el ng-template-->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+    <h3>Heroe eliminado <small class="text-danger">{{ deletedHero }}</small></h3>
+</div>
+
+<!-- Inicialmente no lo pinta solo lo hace cuando yo le diga -->
+<ng-template #nothingWasDeleted>
+    <h3 *ngIf="!deletedHero">No ha borrado nada</h3>
+</ng-template>
+
+
+<button
+    *ngIf="heroNames.length > 0"
+    (click)="removeLastHero()"
+    class="btn btn-outline-danger">
+    Borrar ultimo heroe
+</button>
+
+<ul class="mt-2 list-group">
+    <li *ngFor="let name of heroNames" class="list-group-item">{{name}}</li>
+</ul>
+

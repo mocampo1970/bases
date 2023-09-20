@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HeroComponent {
 
   public name: string = 'Mauricio Ocampo Ingeniero de sistemas'
-  public age: number = 45;
+  public age: number  = 45;
 
   // Getter y setter en este caso es un get que se va a mostrar en el html
   get capitalizeName(){
@@ -28,4 +28,11 @@ export class HeroComponent {
     return `${this.name} - ${this.age} `
   }
 
+  changeNameHero(): void{
+    this.name = 'Mauricio Ocampo Inteligente';
+  }
+
+  changeAgeHero(): void{
+    this.age = 10;
+  }
 }
