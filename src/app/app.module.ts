@@ -1,25 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-// Modulos
+// Modulos, estos los cree en cada ruta, alla los export y aqui los import
 import { CounterModule } from './counter/counter.module';
+import { HeroesModule } from './heroes/heroes/heroes.module';
 
 // Componentes de la app
 import { AppComponent } from './app.component';
-import { HeroComponent } from './heroes/hero/hero.component';
-import { ListComponent } from './heroes/list/list.component';
 
 
 // Ese CounterModule se declara aqui.
 @NgModule({
   declarations: [
-    AppComponent,
-    HeroComponent,
-    ListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    CounterModule
+    CounterModule,
+    HeroesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
