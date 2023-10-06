@@ -1,2 +1,39 @@
-<p>main-page works!</p>
-<h1>DBZ main pages</h1>
+<h1>DBZ main pages personajes</h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <app-listpersonajes></app-listpersonajes>
+
+        <!-- Esto ul incluyendo el h4 podria ser un componente -->
+        <!--<h4>Listado de personajes</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Grillin - 500</li>
+            <li class="list-group-item">Goku - 9500</li>            
+            <li class="list-group-item">Mati - 20000</li>
+            <li class="list-group-item">Cami - 20000</li>            
+        </ul>-->
+    </div>
+
+    <div class="col">
+
+        <app-add-personaje></app-add-personaje>
+
+        <!-- Todo esto va para otro componente -->
+        <!--
+        <h4>Agregar personaje</h4>
+
+        <form class="row">
+            <input type="text" class="form-control mb-2" placeholder="Nombre del personaje">
+            <input type="number" class="form-control mb-2" placeholder="Número">
+            
+            <button type="submit"  class="btn btn-primary">
+                Agregar
+            </button>
+
+        </form>
+        -->
+    </div>
+
+</div>

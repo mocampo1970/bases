@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgApexchartsModule } from 'ng-apexcharts';
+import { NgApexchartsModule } from 'ng-apexcharts';   // graficos
 
 // Modulos, estos los cree en cada ruta, alla los export y aqui los import
 import { CounterModule } from './counter/counter.module';
