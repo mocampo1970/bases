@@ -7,10 +7,39 @@
     <li class="list-group-item">Goku - 9500</li>            
     <li class="list-group-item">Mati - 20000</li>
     <li class="list-group-item">Cami - 20000</li>      -->
-    <li *ngFor="let character of characterList" class="list-group-item">
-        <span></span>
+
+    <!-- Colocamos el indice con index-->
+    <!-- Isfirst para sacar el primer dato, even si es par, toda esta stes lineas pueden ir en una 
+         sola pero por visualizacion es mejor dejarlas asi, toda esta documentacion esta en 
+         https://angular.io/api/common/NgForOf 
+        manejo de NgClass -->
+    <li *ngFor="let character of characterList; 
+        let i = index; 
+        let isFirst = first;
+        let isLast = last;
+        let isEven = even;
+        let isOdd = odd
+        "
+        class="list-group-item"
+        [ngClass]="{'list-group-item-success': isFirst, 
+        'list-group-item-primary': isEven}">
+        <!-- esta instruccion del ngclass la traigo de 
+            https://getbootstrap.com/docs/4.0/components/list-group/ y puedo pintar 
+            por ejm -->
+        <span>{{i +  1}}. </span>
         <strong></strong>
-        <span></span>        
         {{character.name}} - Power: {{character.power}}
+
+        <!-- Sintaxis de practica cambiamos i === 0 x isFirst  -->
+
+        <!--<span>Es el primero {{ i === 0}}</span>-->
+        <span>Es el primero {{ isFirst}}</span>
+
+        <!-- Cambiamos i === characterList.length - 1 x isLast  -->
+        <!--<span>Es el ultimo {{ i === characterList.length - 1}}</span>-->        
+        <span>Es el ultimo {{ isLast }}</span>
+
+        <span> Es par: {{ isEven }}</span>
+
     </li>      
 </ul>

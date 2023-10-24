@@ -25,6 +25,12 @@ export class MainPageComponent {
   },{
     name : 'Mauricio Ocampo',
     power : 100000000
+  },{
+    name : 'Horacio Ocampo',
+    power : 100000000
+  },{
+    name : 'Margarita Gonzalez',
+    power : 100000000
   }
 
 ];
