@@ -8,7 +8,7 @@ import { Character } from '../../interfaces/character';
 })
 export class ListpersonajesComponent {
 
-  // @Input permite recibir datos del componente padre en este caso el main
+  // @Input permite recibir datos del componente padre en este caso el main aqui al hijo
   @Input()
 
   public characterList: Character[] = [{

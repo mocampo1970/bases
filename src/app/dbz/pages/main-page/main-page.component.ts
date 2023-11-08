@@ -33,6 +33,16 @@ export class MainPageComponent {
     power : 100000000
   }
 
-];
+  ];
+
+
+  // Metodo que adiciona un personaje
+  onNewPersonaje(character: Character): void{
+    console.log("mainpage")
+    console.log("mainpage character : ", character)
+    //this.characters.unshift(character);   // Lo pone al ppio del arreglo
+    this.characters.push(character);        // Lo pone al final del arreglo
+
+  }
 
 }

@@ -5,7 +5,7 @@
     <div class="col">
 
         <!-- Esto es como decir te envio characters y recibelos en characterList alla en 
-             listPersonajes -->
+             listPersonajes y cuando enviamos del padre al hijo usamos [] emite del padre al hijo -->
         <app-listpersonajes [characterList]="characters"></app-listpersonajes>
 
         <!-- Esto ul incluyendo el h4 podria ser un componente -->
@@ -20,7 +20,10 @@
 
     <div class="col">
 
-        <app-add-personaje></app-add-personaje>
+        <!-- Aqui se recibe lo del hijo app-add-personaje a este padre main-page y como quiero escuchar 
+            que emite el hijo al padre le colocamos entre () y adicional aqui en el padre recibimos lo 
+            del hijo en onNewPersonaje -->
+        <app-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></app-add-personaje>
 
         <!-- Todo esto va para otro componente -->
         <!--

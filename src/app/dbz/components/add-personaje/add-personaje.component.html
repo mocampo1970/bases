@@ -1,7 +1,7 @@
 <p>add-personaje works!</p>
 <h4>Agregar personaje</h4>
 
-<form class="row">
+<form class="row" (ngSubmit)="emitCharacter()">
 
     <input type="text" [(ngModel)]="character.name" class="form-control mb-2" 
         name="name" placeholder="Nombre del personaje">
