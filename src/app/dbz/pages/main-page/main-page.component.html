@@ -1,12 +1,20 @@
-<h1>DBZ main pages personajes</h1>
+<h1>DBZ main pages personajes va a contener listpersonajes y add-personaje</h1>
 <hr>
 
 <div class="row">
     <div class="col">
 
         <!-- Esto es como decir te envio characters y recibelos en characterList alla en 
-             listPersonajes y cuando enviamos del padre al hijo usamos [] emite del padre al hijo -->
-        <app-listpersonajes [characterList]="characters"></app-listpersonajes>
+             listPersonajes y cuando enviamos del padre al hijo usamos [] emite del padre al hijo 
+             en el caso del onDelete emitimos desde alla del hijo que es listcomponent. 
+             en la clase main.ts pasamos toda la logica a dbzservice que es un nuevo servicio entonces
+             aqui apuntamos a el servicio dbzService-->
+
+        <!-- Luego en la 3 linea lo pasamos de llamar el servicio desde aqui a poner el servicio privado
+             y llamar un metodo de aqui que invoca el servicio -->     
+        <!--<app-listpersonajes [characterList]="characters" (onDelete)="onDeletePersonaje($event)"></app-listpersonajes>-->
+        <!--<app-listpersonajes [characterList]="characters" (onDelete)="dbzService.onDeletePersonaje($event)"></app-listpersonajes>-->
+        <app-listpersonajes [characterList]="characters" (onDelete)="onDeletePersonaje($event)"></app-listpersonajes>
 
         <!-- Esto ul incluyendo el h4 podria ser un componente -->
         <!--<h4>Listado de personajes</h4>
@@ -18,12 +26,23 @@
         </ul>-->
     </div>
 
+    <!-- OnDelete-->
+    <div>
+        
+    </div>
+
     <div class="col">
 
         <!-- Aqui se recibe lo del hijo app-add-personaje a este padre main-page y como quiero escuchar 
             que emite el hijo al padre le colocamos entre () y adicional aqui en el padre recibimos lo 
-            del hijo en onNewPersonaje -->
-        <app-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></app-add-personaje>
+            del hijo en onNewPersonaje 
+            en la clase main.ts pasamos toda la logica a dbzservice que es un nuevo servicio entonces
+            aqui apuntamos a el servicio dbzService-->
+
+        <!-- Movemos el llamado al servicio desde aqui para el ts  -->    
+        <!--<app-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></app-add-personaje>-->
+        <!--<app-add-personaje (onNewPersonaje)="dbzService.onNewPersonaje($event)"></app-add-personaje>-->
+        <app-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></app-add-personaje>        
 
         <!-- Todo esto va para otro componente -->
         <!--
@@ -40,5 +59,31 @@
         </form>
         -->
     </div>
+
+    <label
+    >
+
+
+    <!-- Checkbox -->
+    <input type="checkbox" id="cbox1" value="first_checkbox" /> Este es mi primer
+    checkbox jami</label
+    ><br />
+
+    <input type="checkbox" id="cbox2" value="second_checkbox" />
+    <label for="cbox2">Este es mi segundo checkbox</label>
+
+    <!-- Radio button-->
+    <fieldset>
+        <legend>Elige un color</legend>
+        <label>
+            <input type="radio" name="color" value="azul"> Verde
+        </label>
+        <label>
+            <input type="radio" name="color" value="negro"> Blanco
+        </label>
+        <label>
+            <input type="radio" name="color" value="amarillo"> ATLETICO NACIONAL
+        </label>
+    </fieldset>    
 
 </div>

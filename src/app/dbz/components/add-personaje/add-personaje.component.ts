@@ -22,6 +22,9 @@ export class AddPersonajeComponent {
 
   emitCharacter(): void{
 
+    // Cuando el programa pase por aqui para
+    debugger;
+
     // Si no tiene nombre retorna
     if (this.character.name.length === 0) return;
 
@@ -33,6 +36,9 @@ export class AddPersonajeComponent {
     // Limpia pantalla
     //this.character.name ='';
     //this.character.power=0;
+
+    // Tambien se puede limpiar pantalla de una vez el objeto
+    //this.character = {name:'', power:0}
 
   }
 

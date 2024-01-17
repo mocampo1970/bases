@@ -1,4 +1,4 @@
-<p>listpersonajes works Va a ser puesto en el main-page que es la base!</p>
+<p>listpersonajes works Va a ser puesto en el main-page que es el padre o base</p>
 
 <!-- Esto ul incluyendo el h4 podria ser un componente -->
 <h4>Listado de personajes</h4>
@@ -9,7 +9,9 @@
     <!-- Isfirst para sacar el primer dato, even si es par, toda esta stes lineas pueden ir en una 
          sola pero por visualizacion es mejor dejarlas asi, toda esta documentacion esta en 
          https://angular.io/api/common/NgForOf 
-        manejo de NgClass -->
+        manejo de NgClass 
+        d-flex justify-content-between justifica el texto y el boton de eliminar 
+        align-items-center centra los textos de los personajes -->
     <li *ngFor="let character of characterList; 
         let i = index; 
         let isFirst = first;
@@ -17,26 +19,30 @@
         let isEven = even;
         let isOdd = odd
         "
-        class="list-group-item"
+        class="list-group-item d-flex justify-content-between align-items-center"
         [ngClass]="{'list-group-item-success': isFirst, 
         'list-group-item-primary': isEven}">
         <!-- esta instruccion del ngclass la traigo de 
             https://getbootstrap.com/docs/4.0/components/list-group/ y puedo pintar 
             por ejm -->
-        <span>{{i +  1}}. </span>
-        <strong></strong>
-        {{character.name}} - Power: {{character.power}}
+        <div>
 
-        <!-- Sintaxis de practica cambiamos i === 0 x isFirst  -->
+            <span>{{i +  1}}. </span>
+            <strong></strong>
+            {{character.name}} - Power: {{character.power}}
 
-        <!--<span>Es el primero {{ i === 0}}</span>-->
-        <span>Es el primero {{ isFirst}}</span>
+            <!-- Sintaxis de practica cambiamos i === 0 x isFirst  -->
 
-        <!-- Cambiamos i === characterList.length - 1 x isLast  -->
-        <!--<span>Es el ultimo {{ i === characterList.length - 1}}</span>-->        
-        <span>Es el ultimo {{ isLast }}</span>
+            <!--<span>Es el primero {{ i === 0}}</span>-->
+            <span>Es el primero {{ isFirst}}</span>
 
-        <span> Es par: {{ isEven }}</span>
+            <!-- Cambiamos i === characterList.length - 1 x isLast  -->
+            <!--<span>Es el ultimo {{ i === characterList.length - 1}}</span>-->        
+            <span>Es el ultimo {{ isLast }}</span>
+
+            <span> Es par: {{ isEven }}</span>
+        </div>
+        <button class="btn btn-danger" (click)="onDeletePersonaje(i)">X</button>
 
     </li>      
 </ul>
