@@ -6,9 +6,13 @@ import { NgApexchartsModule } from 'ng-apexcharts';   // graficos
 import { CounterModule } from './counter/counter.module';
 import { HeroesModule } from './heroes/heroes/heroes.module';
 import { DbzModule } from './dbz/dbz.module';
+import { GifsModule } from './gifs/gifs/gifs.module';
+import { SharedModule } from './shared/shared/shared.module';
 
 // Componentes de la app
 import { AppComponent } from './app.component';
+import { HomePageComponent } from './gifs/pages/home/home-page/home-page.component';
+import { SearchBoxComponent } from './gifs/components/search-box/search-box/search-box.component';
 
 
 // Ese CounterModule se declara aqui.
@@ -21,7 +25,9 @@ import { AppComponent } from './app.component';
     NgApexchartsModule,
     CounterModule,
     HeroesModule,
-    DbzModule
+    DbzModule,
+    GifsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
