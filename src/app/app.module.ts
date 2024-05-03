@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared/shared.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './gifs/pages/home/home-page/home-page.component';
 import { SearchBoxComponent } from './gifs/components/search-box/search-box/search-box.component';
+import { CardListComponent } from './gifs/components/card-list/card-list.component';
 
 
 // Ese CounterModule se declara aqui.

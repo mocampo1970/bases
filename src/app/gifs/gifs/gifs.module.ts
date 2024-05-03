@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from '../pages/home/home-page/home-page.component';
 import { SearchBoxComponent } from '../components/search-box/search-box/search-box.component';
+import { CardListComponent } from '../components/card-list/card-list.component';
 
 
 // Aqui exporto app-home-page que asi se llama el selector pero se exporta con el nombre 
@@ -14,14 +15,16 @@ import { SearchBoxComponent } from '../components/search-box/search-box/search-b
 @NgModule({
   declarations: [
     HomePageComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    CardListComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     HomePageComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    CardListComponent
   ]
 })
 export class GifsModule { }
