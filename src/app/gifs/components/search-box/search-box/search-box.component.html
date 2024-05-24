@@ -1,9 +1,9 @@
 <h5>
     <!-- se invoca metodo searchTag cuando suelta el mouse y se le envia como parametro lo que tenga
          el texto de busqueda, esa #txtTagInput la creo despues de llamar el metodo y esa la pasamos
-         en el argumento. -->
+         en el argumento. Ese #txtTagInput solo lo puedo llamar solo aqui. -->
     <input type="text" class="form-control" placeholder="Buscar Gifs..." 
-    (keyup)="searchTag(txtTagInput.value)" #txtTagInput>
+    (keyup.enter)="searchTag(txtTagInput.value)" #txtTagInput>
 </h5>
 
 
